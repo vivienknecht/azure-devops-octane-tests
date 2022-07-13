@@ -7,8 +7,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+pool: Default
 
 steps:
 - task: octane-start-task-private@1
