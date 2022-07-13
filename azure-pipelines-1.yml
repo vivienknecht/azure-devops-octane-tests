@@ -8,10 +8,6 @@ trigger:
 
 pool: Default
 
-variables:
-- name: p1
-  value: v1
-
 steps:
 - task: octane-start-task-private@1
   inputs:
