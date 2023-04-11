@@ -43,7 +43,6 @@ public class AppTest extends TestCase {
 
     public void testWillFailOnParameter() {
         String value = System.getProperty("fail");
-        fail("fail parameter is set");
         if (value != null && value.toLowerCase().equals("true")) {
             fail("fail parameter is set");
         }
