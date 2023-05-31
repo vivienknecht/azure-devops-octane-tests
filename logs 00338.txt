@@ -1,0 +1,98 @@
+06/12/2022 12:45:22,394 ERROR [AbridgedTasksWorker-2040                          ] BridgeServiceImpl               : [https://samet-1.almoctane.com?p=1001] failed to submit abridged task's result
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:186) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:140) ~[?:?]
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[?:?]
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[?:?]
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[?:?]
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1333) ~[?:?]
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:976) ~[?:?]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.14.jar:4.4.14]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.13.jar:4.5.13]
+	at com.hp.octane.integrations.services.rest.OctaneRestClientImpl.executeRequest(OctaneRestClientImpl.java:203) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.rest.OctaneRestClientImpl.execute(OctaneRestClientImpl.java:143) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.bridge.BridgeServiceImpl.putAbridgedResult(BridgeServiceImpl.java:326) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.bridge.BridgeServiceImpl.lambda$handleTasks$0(BridgeServiceImpl.java:302) ~[integrations-sdk-2.7.6.3.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) ~[?:?]
+06/12/2022 12:45:22,396 INFO  [AbridgedTasksWorker-2040                          ] BridgeServiceImpl               : [https://samet-1.almoctane.com?p=1001] result for task 'bd6b15fa-b9a5-40de-9494-f1daec1133bf' submitted with status 0
+06/12/2022 12:45:27,349 INFO  [AbridgedConnectivityWorker-1236                   ] OctaneRestClientImpl            : [https://myd-vma00266.swinfra.net:8443?p=1001] initial login
+06/12/2022 12:45:27,560 INFO  [Executor #0 for Built-In Node : executing FoD #126] EventsServiceImpl               : [https://qa9.almoctane.com?p=1001] Event is ignored : FoD:126:STARTED, parents : [FoD]
+06/12/2022 12:45:27,560 INFO  [Executor #0 for Built-In Node : executing FoD #126] EventsServiceImpl               : [http://myd-hvm04097.swinfra.net:8081?p=1001] Event is ignored : FoD:126:STARTED, parents : [FoD]
+06/12/2022 12:45:27,560 INFO  [Executor #0 for Built-In Node : executing FoD #126] EventsServiceImpl               : [https://nightly-dev.almoctane.com?p=1001] Event is ignored : FoD:126:STARTED, parents : [FoD]
+06/12/2022 12:45:27,961 INFO  [EventsServiceWorker-121                           ] EventsServiceImpl               : [https://samet-1.almoctane.com?p=1001] sending [FoD:126:STARTED] event/s. Correlation ID - f0f44235ec0b4e22b345fc711
+06/12/2022 12:45:28,808 INFO  [AbridgedConnectivityWorker-337                    ] OctaneRestClientImpl            : [http://myd-hvm06544.swinfra.net:8081?p=1001] initial login
+06/12/2022 12:45:31,666 INFO  [AbridgedConnectivityWorker-297                    ] OctaneRestClientImpl            : [http://ILifracho02.microfocus.com:8080/dev?p=1001] initial login
+06/12/2022 12:45:31,706 ERROR [AbridgedConnectivityWorker-297                    ] BridgeServiceImpl               : [http://ILifracho02.microfocus.com:8080/dev?p=1001] Failed to retrieve abridged tasks. ALM Octane Server is not accessible : java.net.UnknownHostException - No such host is known (ILifracho02.microfocus.com). Breathing 30 secs.
+06/12/2022 12:45:31,743 INFO  [AbridgedConnectivityWorker-187                    ] OctaneRestClientImpl            : [http://myd-hvm01094.swinfra.net:8081?p=1001] initial login
+06/12/2022 12:45:31,775 ERROR [AbridgedConnectivityWorker-187                    ] BridgeServiceImpl               : [http://myd-hvm01094.swinfra.net:8081?p=1001] Failed to retrieve abridged tasks. ALM Octane Server is not accessible : java.net.UnknownHostException - No such host is known (myd-hvm01094.swinfra.net). Breathing 30 secs.
+06/12/2022 12:45:33,642 WARN  [AbridgedConnectivityWorker-209                    ] OctaneRestClientImpl            : [https://oded-1.almoctane.com?p=1001] failed to login; response status: 500
+06/12/2022 12:45:33,642 ERROR [AbridgedConnectivityWorker-209                    ] OctaneRestClientImpl            : [https://oded-1.almoctane.com?p=1001] failed on initial login, status 500
+06/12/2022 12:45:33,642 ERROR [AbridgedConnectivityWorker-209                    ] BridgeServiceImpl               : [https://oded-1.almoctane.com?p=1001] Unexpected response from Octane; status: 500, content: {"error_code":"platform.general_error","correlation_id":"wl4n3llnydk04iwom5rx23e0k","description":"Action upon entity of type [site_user] has failed. Error: Failed to get connection to database. , Target connection: 'jdbc:postgresql://octane-pg.oded-1:5432/sa_oded_1' data source of DataSourceType=[SCHEMA_LEVEL], Error: FATAL: database \"sa_oded_1\" does not exist, Last error: Connections could not be acquired from the underlying database!","description_translated":"Action upon entity of type [site_user] has failed. Error: Failed to get connection to database. , Target connection: 'jdbc:postgresql://octane-pg.oded-1:5432/sa_oded_1' data source of DataSourceType=[SCHEMA_LEVEL], Error: FATAL: database \"sa_oded_1\" does not exist, Last error: Connections could not be acquired from the underlying database!","properties":{"property":[{"key":"message","value":"Service=[ReadServiceImpl], blFlowCommand=[EntitiesReader], token=[SiteUserEntityToken] has thrown an exception and terminated BL flow. See service result log message for details. Error=[Failed to get connection to database. , Target connection: 'jdbc:postgresql://octane-pg.oded-1:5432/sa_oded_1' data source of DataSourceType=[SCHEMA_LEVEL], Error: FATAL: database \"sa_oded_1\" does not exist, Last error: Connections could not be acquired from the underlying database!]"}]},"stack_trace":"com.hp.mqm.bl.platform.exception.GeneralErrorException: Action upon entity of type [site_user] has failed. Error: Failed to get connection to database. , Target connection: 'jdbc:postgresql://octane-pg.oded-1:5432/sa_oded_1' data source of DataSourceType=[SCHEMA_LEVEL], Error: FATAL: database \"sa_oded_1\" does not exist, Last error: Connections could not be acquired from the underlying database!\n\tat com.hp.mqm.bl.platform.ServicesUtils.getBlException(ServicesUtils.java:133)\n\tat com.hp.mqm.bl.platform.BaseBlServiceImpl.handleExceptionAndGetBusinessLogicException(BaseBlServiceImpl.java:728)\n\tat com.hp.mqm.bl.platform.BaseBlServi.. Breathing 20 secs.
+06/12/2022 12:45:34,519 INFO  [pool-40-thread-5                                  ] OctaneRestClientImpl            : [http://myd-hvm01094.swinfra.net:8081?p=1001] initial login
+06/12/2022 12:45:34,519 INFO  [pool-46-thread-5                                  ] OctaneRestClientImpl            : [https://oded-1.almoctane.com?p=1001] initial login
+06/12/2022 12:45:34,519 INFO  [pool-31-thread-5                                  ] OctaneRestClientImpl            : [http://myd-hvm02901.swinfra.net:8081?p=1001] initial login
+06/12/2022 12:45:34,519 INFO  [pool-61-thread-5                                  ] OctaneRestClientImpl            : [https://myd-hvm01295.swinfra.net:8446?p=1001] initial login
+06/12/2022 12:45:34,519 ERROR [pool-40-thread-5                                  ] ConfigurationServiceImpl        : [http://myd-hvm01094.swinfra.net:8081?p=1001] failed to getOctaneConnectivityStatus : myd-hvm01094.swinfra.net
+06/12/2022 12:45:34,519 INFO  [pool-43-thread-5                                  ] OctaneRestClientImpl            : [http://ILifracho02.microfocus.com:8080/dev?p=1001] initial login
+06/12/2022 12:45:34,519 ERROR [pool-43-thread-5                                  ] ConfigurationServiceImpl        : [http://ILifracho02.microfocus.com:8080/dev?p=1001] failed to getOctaneConnectivityStatus : ILifracho02.microfocus.com
+06/12/2022 12:45:34,519 INFO  [pool-55-thread-5                                  ] OctaneRestClientImpl            : [http://myd-hvm06544.swinfra.net:8081?p=1001] initial login
+06/12/2022 12:45:34,519 INFO  [pool-37-thread-5                                  ] OctaneRestClientImpl            : [https://myd-hvm01295.swinfra.net:8450?p=1001] initial login
+06/12/2022 12:45:34,519 INFO  [pool-22-thread-5                                  ] OctaneRestClientImpl            : [http://myd-hvm06544.swinfra.net:8081?p=1002] initial login
+06/12/2022 12:45:34,520 INFO  [pool-71-thread-5                                  ] OctaneRestClientImpl            : [https://myd-vma00266.swinfra.net:8443?p=1001] initial login
+06/12/2022 12:45:34,520 INFO  [pool-18-thread-5                                  ] OctaneRestClientImpl            : [https://rina-1.almoctane.com?p=1001] initial login
+06/12/2022 12:45:34,522 INFO  [pool-25-thread-5                                  ] SCMDataServiceImpl              : [https://samet-1.almoctane.com?p=1001] FoD #126 was added to queue
+06/12/2022 12:45:34,721 WARN  [pool-18-thread-5                                  ] OctaneRestClientImpl            : [https://rina-1.almoctane.com?p=1001] failed to login; response status: 404
+06/12/2022 12:45:34,721 ERROR [pool-18-thread-5                                  ] OctaneRestClientImpl            : [https://rina-1.almoctane.com?p=1001] failed on initial login, status 404
+06/12/2022 12:45:34,721 ERROR [pool-18-thread-5                                  ] ConfigurationServiceImpl        : [https://rina-1.almoctane.com?p=1001] failed to getOctaneConnectivityStatus : null
+06/12/2022 12:45:34,732 ERROR [pool-49-thread-5                                  ] ConfigurationServiceImpl        : [https://qa8.almoctane.com?p=111001] failed to getOctaneConnectivityStatus : null
+06/12/2022 12:45:35,352 INFO  [SCMDataPushWorker-126                             ] SCMDataServiceImpl              : [https://samet-1.almoctane.com?p=1001] scmData for FoD #126, push SUCCEED : {"status":"success","message":"processing"}
+06/12/2022 12:45:35,708 ERROR [pool-31-thread-5                                  ] ConfigurationServiceImpl        : [http://myd-hvm02901.swinfra.net:8081?p=1001] failed to getOctaneConnectivityStatus : Connect to myd-hvm02901.swinfra.net:8081 [myd-hvm02901.swinfra.net/10.199.67.130] failed: Connection refused: connect
+06/12/2022 12:45:36,115 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesListener         : FOD configuration was found in FoD #126
+06/12/2022 12:45:36,118 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://rina-1.almoctane.com?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,121 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [http://myd-hvm06544.swinfra.net:8081?p=1002] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,123 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://samet-1.almoctane.com?p=1001] FoD:126 was added to vulnerabilities queue, currently : 1 items in queue
+06/12/2022 12:45:36,125 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [http://myd-hvm02901.swinfra.net:8081?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,127 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://myd-hvm01295.swinfra.net:8450?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,130 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [http://myd-hvm01094.swinfra.net:8081?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,132 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [http://ILifracho02.microfocus.com:8080/dev?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,135 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://oded-1.almoctane.com?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,137 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://qa8.almoctane.com?p=111001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,140 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [http://myd-hvm06544.swinfra.net:8081?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,142 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://myd-hvm01295.swinfra.net:8446?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,145 INFO  [Executor #0 for Built-In Node : executing FoD #126] VulnerabilitiesServiceImpl      : [https://myd-vma00266.swinfra.net:8443?p=1001] FoD:126 was added to vulnerabilities queue, currently : 10 items in queue
+06/12/2022 12:45:36,484 INFO  [EventsServiceWorker-121                           ] EventsServiceImpl               : [https://samet-1.almoctane.com?p=1001] sending [FoD:126:FINISHED] event/s. Correlation ID - 2b28c3bba0c54b7d86d009038
+06/12/2022 12:45:37,024 INFO  [VulnerabilitiesPushWorker-125                     ] VulnerabilitiesServiceImpl      : [https://samet-1.almoctane.com?p=1001] vulnerabilities data of FoD #126 found to be relevant to Octane
+06/12/2022 12:45:37,025 WARN  [VulnerabilitiesPushWorker-125                     ] FODConnector                    : FOD connection does not need proxy
+06/12/2022 12:45:37,457 INFO  [BuildLogsPushWorker-122                           ] LogsServiceImpl                 : [https://samet-1.almoctane.com?p=1001] log of 'FoD #126', root job : FoD, found 1 interested workspace/s
+06/12/2022 12:45:37,704 ERROR [VulnerabilitiesPushWorker-125                     ] FODConnector                    : inside getAccessToken():after Post, got status : 404
+06/12/2022 12:45:37,704 ERROR [VulnerabilitiesPushWorker-125                     ] VulnerabilitiesServiceImpl      : [https://samet-1.almoctane.com?p=1001] permanent error on 'FoD #126', passing over
+com.hp.octane.integrations.exceptions.PermanentException: Cannot authenticate:Not Found
+	at com.hp.octane.integrations.services.vulnerabilities.fod.dto.FODConnector.getAccessToken(FODConnector.java:215) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.fod.dto.FODConnector.initConnection(FODConnector.java:81) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.fod.dto.FodConnectionFactory.createFodConnector(FodConnectionFactory.java:75) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.fod.dto.FodConnectionFactory.instance(FodConnectionFactory.java:39) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.fod.dto.services.FODReleaseService.getScansLastInFirstFetched(FODReleaseService.java:36) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.fod.FODServiceImpl.fodScanIsStillInProgress(FODServiceImpl.java:118) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.fod.FODServiceImpl.getVulnerabilitiesScanResultStream(FODServiceImpl.java:73) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.VulnerabilitiesServiceImpl.processPushVulnerabilitiesQueueItem(VulnerabilitiesServiceImpl.java:220) ~[integrations-sdk-2.7.6.3.jar:?]
+	at com.hp.octane.integrations.services.vulnerabilities.VulnerabilitiesServiceImpl.worker(VulnerabilitiesServiceImpl.java:173) ~[integrations-sdk-2.7.6.3.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) ~[?:?]
+06/12/2022 12:45:38,054 INFO  [BuildLogsPushWorker-122                           ] LogsServiceImpl                 : [https://samet-1.almoctane.com?p=1001] successfully pushed log of 'FoD #126', root job : FoD to WS 1002, correlation Id = 1fb4c9867aaa4058b4fae2629
