@@ -29,7 +29,7 @@ public class AppTest extends TestCase {
      */
     public void testAppA() {
         System.out.print("AppTest.testAppA");
-        assertTrue(true);
+        assertTrue(false);
     }
 
     public void testAppB() {
