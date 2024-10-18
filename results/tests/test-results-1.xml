@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Compra pixel propio cambio estado automatico" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-16T12:45:57" hostname="MCAD49X49.corporacionbci.cl" time="15.471">
+  <properties/>
+  <testcase name="Compra igual o menor a cero" classname="Compra pixel propio cambio estado automatico" time="15.471"/>
+  <system-out><![CDATA[
+@BSPID59003REV0.2.0 @TSCID191007
+Scenario Outline: Compra igual o menor a cero                                                                                      ?[90m# src/test/java/features/BSP1_59003.feature:25?[0m
+
+Vamos con Chrome!
+
+testOctane
+  ?[32mGiven ?[0m?[32mrealizo login correcto en ms ?[0m?[32m?[1m"https://ecorg3crt-aapim-001.azure-api.net/api-oauth-b2b/v1/oauth2/token"?[0m?[32m con rut ?[0m?[32m?[1m"1666446-1"?[0m ?[90m# definitions.testOctane.realizoLoginCorrectoEnMsConRut(java.lang.String,java.lang.String)?[0m
+testOctane
+  ?[32mThen ?[0m?[32mrecibo respuesta ?[0m?[32m?[1m200?[0m                                                                                                        ?[90m# definitions.testOctane.reciboRespuesta(int)?[0m
+testOctane
+  ?[32mGiven ?[0m?[32mingreso en el body parametro ?[0m?[32m?[1m"5f5bcfdd9d20fa001b0ebcd6"?[0m                                                                    ?[90m# definitions.testOctane.ingresoEnElBodyParametro(java.lang.String)?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mobtengo ?[0m?[32m?[1m"LK0R-KGJ5-BBD1"?[0m?[32m de la bbdd?[0m                                                                                          ?[90m# definitions.testOctane.obtengoDeLaBbdd(java.lang.String)?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mingreso en campo ?[0m?[32m?[1m"0"?[0m                                                                                                         ?[90m# definitions.testOctane.ingresoEnCampo(java.lang.String)?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mingreso ?[0m?[32m?[1m"http://labarra.cl"?[0m                                                                                                  ?[90m# definitions.Login.InicioPymeDef.ingreso(java.lang.String)?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mingreso ?[0m?[32m?[1m"0"?[0m                                                                                                                  ?[90m# definitions.Login.InicioPymeDef.ingreso(java.lang.String)?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mingreso ?[0m?[32m?[1m"0"?[0m                                                                                                                  ?[90m# definitions.Login.InicioPymeDef.ingreso(java.lang.String)?[0m
+testOctane
+  ?[32mWhen ?[0m?[32mejecuto ms ?[0m?[32m?[1m"http://ecorg3crt-aapim-001.azure-api.net/ms-loyalty-sales/v2/sales"?[0m                                             ?[90m# definitions.testOctane.ejecutoMs(java.lang.String)?[0m
+testOctane
+  ?[32mThen ?[0m?[32mobtengo status ?[0m?[32m?[1m201?[0m                                                                                                          ?[90m# definitions.testOctane.obtengoStatus(int)?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mcampo identifier?[0m                                                                                                             ?[90m# definitions.testOctane.campoIdentifier()?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mcampo totalcashback?[0m                                                                                                          ?[90m# definitions.testOctane.campoTotalcashback()?[0m
+testOctane
+  ?[32mAnd ?[0m?[32mvalido en bbdd sales en la collections sales el estado de la compra WAITING?[0m                                                  ?[90m# definitions.testOctane.validoEnBbddSalesEnLaCollectionsSalesElEstadoDeLaCompraWAITING()?[0m
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 129.0.6668.100 (cf58cba358d31ce285c1970a79a9411d0fb381a5-refs/branch-heads/6668@{#1704}) on port 54870
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 54870.
+oct. 16, 2024 9:46:12 A.M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+oct. 16, 2024 9:46:12 A.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 129, so returning the closest version found: a no-op implementation
+oct. 16, 2024 9:46:12 A.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Unable to find CDP implementation matching 129.
+oct. 16, 2024 9:46:12 A.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
+WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.1.4` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
