@@ -14,13 +14,15 @@ steps:
   inputs:
     OctaneServiceConnection: 'connectionOctane'
     WorkspaceList: '1002'
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- script: |
+    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="/results/test-results.xml"
+
 - task: octane-end-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
