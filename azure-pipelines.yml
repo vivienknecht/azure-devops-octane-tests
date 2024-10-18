@@ -10,9 +10,9 @@ trigger:
 pool: Default
 
 steps:
-- task: octane-start-task-private@1
+- task: octane-start-task@2
   inputs:
-    OctaneServiceConnection: 'connectionAzure'
+    OctaneServiceConnection: 'connectionOctane'
     WorkspaceList: '1002'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -21,7 +21,7 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: octane-end-task-private@1
+- task: octane-end-task@2
   inputs:
-    OctaneServiceConnection: 'connectionAzure'
+    OctaneServiceConnection: 'connectionOctane'
     WorkspaceList: '1002'
