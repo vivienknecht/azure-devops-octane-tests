@@ -21,7 +21,7 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="$(System.DefaultWorkingDirectory)/converted-test-results.xml"
+    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
   displayName: 'Convert Test Results'
 
 - task: PublishPipelineArtifact@1
