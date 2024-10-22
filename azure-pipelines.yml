@@ -21,22 +21,11 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
+    mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="/results/converted-test-results.xml"
   displayName: 'Convert Test Results'
-
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(System.DefaultWorkingDirectory)/converted-test-results.xml'
-    artifact: 'bdd2octaneResults'
-    publishLocation: 'pipeline'
-
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: 'bdd2octaneResults'
-    path: '$(System.DefaultWorkingDirectory)'
 
 - task: octane-end-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
-    CucumberReportPath: '$(System.DefaultWorkingDirectory)'
+    CucumberReportPath: '$(System.DefaultWorkingDirectory)/results'
     WorkspaceList: '1002'
