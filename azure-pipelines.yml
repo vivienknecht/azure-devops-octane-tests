@@ -24,10 +24,6 @@ steps:
     mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
   displayName: 'Convert Test Results'
 
-- script: |
-    ls $(System.DefaultWorkingDirectory)
-  displayName: 'List files in directory'
-
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(System.DefaultWorkingDirectory)/converted-test-results.xml'
@@ -42,5 +38,5 @@ steps:
 - task: octane-end-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
-    CucumberReportPath: '../../../**/converted-*.xml'
+    CucumberReportPath: '$(System.DefaultWorkingDirectory)'
     WorkspaceList: '1002'
