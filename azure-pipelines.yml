@@ -38,5 +38,5 @@ steps:
 - task: octane-end-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
-    CucumberReportPath: '**/converted-*.xml'
+    CucumberReportPath: '../**/converted-*.xml'
     WorkspaceList: '1002'
