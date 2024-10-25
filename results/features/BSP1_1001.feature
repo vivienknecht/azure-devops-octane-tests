@@ -6,8 +6,8 @@ Background:
   Given realizo login correcto en ms "https://ecorg3crt-aapim-001.azure-api.net/api-oauth-b2b/v1/oauth2/token" con rut "1666446-1"
   Then recibo respuesta 200
 
-@TSCID1015
-  Scenario Outline: Compra igual o menor a cero
+@TSCID1008
+  Scenario Outline: Compra igual o menor a cero test
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
     And ingreso en campo "<successUrl>"
