@@ -2,6 +2,20 @@
 <testsuite name="Compra pixel propio cambio estado automatico" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-16T12:45:57" hostname="MCAD49X49.corporacionbci.cl" time="15.471">
   <properties/>
   <testcase name="Compra igual o menor a test cero" classname="Compra pixel propio cambio estado automatico" time="15.471"/>
+        <failure message="Expected condition failed: waiting for com.hastings.automation.function.pageaction.webpageaction.ClickAction$1@7b93d7e1 (tried for 30 second(s) with 200 milliseconds interval)" type="org.openqa.selenium.TimeoutException"><![CDATA[Given realizo login correcto en ms "https://ecorg3crt-aapim-001.azure-api.net/api-oauth-b2b/v1/oauth2/token" con rut "1666446-1"................passed
+Given ingreso test en el body parametro "5f5bcfdd9d20fa001b0ebcd6".................passed
+When ejecuto ms "http://ecorg3crt-aapim-001.azure-api.net/ms-loyalty-sales/v2/sales".failed
+Then obtengo status 201.................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.hastings.automation.function.pageaction.webpageaction.ClickAction$1@7b93d7e1 (tried for 30 second(s) with 200 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:263)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.hastings.automation.function.pageaction.webpageaction.ClickAction.waitAndClickElement(ClickAction.java:45)
+	at com.hastings.automation.function.ui.pageobjects.digital.reactmyaccount.MaReactMarketingPreferenceOverlayPage.clickMarketingPreferenceCloseButton(MaReactMarketingPreferenceOverlayPage.java:68)
+	at com.hastings.automation.automationtest.bdd.definitions.stepdefinitions.digital.digitalsteps.MyAccountReactSteps.userClickOnFooterLink(MyAccountReactSteps.java:179)
+	at ✽.When ejecuto ms "http://ecorg3crt-aapim-001.azure-api.net/ms-loyalty-sales/v2/sales"(classpath:src/test/resources/features/ContainHyphensFooterUIValidations.feature:51)
+]]></failure>
   <system-out><![CDATA[
 @BSPID59003REV0.2.0 @TSCID191007
 Scenario Outline: Compra igual o menor a cero                                                                                      ?[90m# src/test/java/features/BSP1_59003.feature:25?[0m
