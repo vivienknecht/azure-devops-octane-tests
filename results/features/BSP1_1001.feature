@@ -1,5 +1,5 @@
 #Auto generated Octane revision tag
-@BSPID1001REV0.3.0
+@BSPID1001REV0.5.0
 Feature: Compra pixel propio cambio estado automatico
 
 Background:
