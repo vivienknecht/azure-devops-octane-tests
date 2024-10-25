@@ -1,12 +1,12 @@
 #Auto generated Octane revision tag
-@BSPID1001REV0.2.0
+@BSPID1001REV0.3.0
 Feature: Compra pixel propio cambio estado automatico
 
 Background:
   Given realizo login correcto en ms "https://ecorg3crt-aapim-001.azure-api.net/api-oauth-b2b/v1/oauth2/token" con rut "1666446-1"
   Then recibo respuesta 200
 
-@TSCID1009
+@TSCID1008
   Scenario Outline: Compra igual o menor a cero
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -24,7 +24,7 @@ Background:
       |store|code|subtotal|successUrl|price|totalprice|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|http://labarra.cl|0|0|0|
 
-@TSCID1010
+@TSCID1009
   Scenario Outline: Compra tiene monto cashback superior a monto
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -43,7 +43,7 @@ Background:
       |store|code|subtotal|price1|totalprice1|price2|totalprice2|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|100000|20000|20000|40000|80000|
 
-@TSCID1011
+@TSCID1010
   Scenario Outline: Compra tiene monto cashback mayor al monto de la compra
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -64,7 +64,7 @@ Background:
       |store|code|subtotal|price1|cashback1|totalprice1|price2|cashback2|totalprice2|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|5000|5000|5500|0|0|0|0|
 
-@TSCID1012
+@TSCID1011
   Scenario Outline: Compra duplicada en monto comercio OC
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -84,7 +84,7 @@ Background:
       |store|code|subtotal|ordernumber|price1|totalprice1|price2|totalprice2|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|5000|6ab98d5b-82af-4bcc-a194-dd7c9bef8c47|5000|0|0|0|
 
-@TSCID1013
+@TSCID1012
   Scenario Outline: Compra tiene el mismo monto comercio distinta OC
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -107,7 +107,7 @@ Background:
       |store|code|subtotal|ordernumber|price1|totalprice1|ordernumber1|price2|totalprice2|ordernumber2|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|100000|oc33414131oc|20000|20000|oc33414131oc|40000|40000|oc33414131oc|
 
-@TSCID1014
+@TSCID1013
   Scenario Outline: Compra sin restriccion
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -130,7 +130,7 @@ Background:
       |store|code|subtotal|ordernumber|price1|totalprice1|ordernumber1|price2|totalprice2|ordernumber2|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|xxxxxx|200|200|xxxxxx|400|800|xxxxxx|
 
-@TSCID1015
+@TSCID1014
   Scenario Outline: Compra duplicada mismo dia sin OC
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
@@ -144,7 +144,6 @@ Background:
     And campo identifier
     And campo totalcashback
     And valido en bbdd sales en la collections sales el estado de la compra WAITING
-
 
     Examples:
       |store|code|subtotal|price1|totalprice1|price2|totalprice2|
