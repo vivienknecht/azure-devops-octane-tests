@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Compra pixel propio cambio estado automatico" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-16T12:45:57" hostname="MCAD49X49.corporacionbci.cl" time="15.471">
   <properties/>
-  <testcase name="Compra igual o menor a cero" classname="Compra pixel propio cambio estado automatico" time="15.471"/>
+  <testcase name="Compra igual o menor a test cero" classname="Compra pixel propio cambio estado automatico" time="15.471"/>
   <system-out><![CDATA[
 @BSPID59003REV0.2.0 @TSCID191007
 Scenario Outline: Compra igual o menor a cero                                                                                      ?[90m# src/test/java/features/BSP1_59003.feature:25?[0m
