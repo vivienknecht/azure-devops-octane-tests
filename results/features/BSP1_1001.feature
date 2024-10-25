@@ -8,7 +8,7 @@ Background:
 
 @TSCID1008
   Scenario Outline: Compra igual o menor a cero
-    Given ingreso en el body parametro "<store>"
+    Given ingreso test en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
     And ingreso en campo "<successUrl>"
     And ingreso "<subtotal>"
