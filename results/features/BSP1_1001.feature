@@ -7,7 +7,7 @@ Background:
   Then recibo respuesta 200
 
 @TSCID1008
-  Scenario Outline: Compra igual o menor a cero test
+  Scenario Outline: Compra igual o menor a cero
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
     And ingreso en campo "<successUrl>"
