@@ -13,7 +13,7 @@ steps:
 - task: octane-start-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
-    WorkspaceList: '1002'
+    WorkspaceList: '1028'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
@@ -39,4 +39,4 @@ steps:
   inputs:
     OctaneServiceConnection: 'connectionOctane'
     CucumberReportPath: '$(System.DefaultWorkingDirectory)/results'
-    WorkspaceList: '1002'
+    WorkspaceList: '1028'
