@@ -131,3 +131,20 @@ Background:
     Examples:
       |store|code|subtotal|price1|totalprice1|price2|totalprice2|
       |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|200|200|400|800|]]>
+      
+  Scenario Outline: New scenario
+    Given ingreso en el body parametro "<store>"
+    And obtengo "<code>" de la bbdd
+    And ingreso "<subtotal>"
+    And ingreso "<price1>"
+    And ingreso "<totalprice1>"
+    And ingreso "<price2>"
+    And ingreso "<totalprice2>"
+    When ejecuto ms "http://ecorg3crt-aapim-001.azure-api.net/ms-loyalty-sales/v2/sales"
+    Then obtengo status 201
+    And campo identifier
+    And campo totalcashback
+    And valido en bbdd sales en la collections sales el estado de la compra WAITING
+    Examples:
+      |store|code|subtotal|price1|totalprice1|price2|totalprice2|
+      |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|200|200|400|800|]]>
