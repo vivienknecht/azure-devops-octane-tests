@@ -60,7 +60,7 @@ Background:
     Given ingreso en el body parametro "<store>"
     And obtengo "<code>" de la bbdd
     And ingreso "<subtotal>"
-    And obtengo "ordernumber de la bbdd
+    And obtengo "ordernumber de la bbdd"
     And "<price1>"
     And "<totalprice1>"
     And "<price2>"
