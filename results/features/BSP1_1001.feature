@@ -6,22 +6,22 @@ Then recibo respuesta 200
 
 
 @testUpload
-    Scenario Outline: Compra igual o menor a cero
-      Given ingreso en el body parametro "<store>"
-      And obtengo "<code>" de la bbdd
-      And ingreso en campo "<successUrl>"
-      And ingreso> "<subtotal>"
-      And ingreso "<price>"
-      And ingreso "<totalprice>"
-      When ejecuto ms "https:***************************************"
-      Then obtengo status 201
-      And campo identifier
-      And campo totalcashback
-      And valido en bbdd sales en la collections sales el estado de la compra WAITING
+Scenario Outline: Compra igual o menor a cero
+  Given ingreso en el body parametro "<store>"
+  And obtengo "<code>" de la bbdd
+  And ingreso en campo "<successUrl>"
+  And ingreso> "<subtotal>"
+  And ingreso "<price>"
+  And ingreso "<totalprice>"
+  When ejecuto ms "https:***************************************"
+  Then obtengo status 201
+  And campo identifier
+  And campo totalcashback
+  And valido en bbdd sales en la collections sales el estado de la compra WAITING
 
-      Examples:
-        |store|code|subtotal|successUrl|price|totalprice|
-        |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|http://labarra.cl|0|0|0|
+  Examples:
+    |store|code|subtotal|successUrl|price|totalprice|
+    |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|http://labarra.cl|0|0|0|
 
 
   Scenario Outline: Compra tiene monto cashback superior a monto
