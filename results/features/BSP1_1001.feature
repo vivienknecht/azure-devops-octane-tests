@@ -146,4 +146,4 @@ Then recibo respuesta 200
 
     Examples:
       |store|code|subtotal|price1|totalprice1|price2|totalprice2|
-      |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|200|200|400|800|
+      |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|200|200|400|800|]]>
