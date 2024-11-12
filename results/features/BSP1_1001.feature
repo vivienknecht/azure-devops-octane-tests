@@ -130,7 +130,7 @@ Background:
     And valido en bbdd sales en la collections sales el estado de la compra WAITING
     Examples:
       |store|code|subtotal|price1|totalprice1|price2|totalprice2|
-      |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|200|200|400|800|]]>
+      |5f5bcfdd9d20fa001b0ebcd6|LK0R-KGJ5-BBD1|1000|200|200|400|800|
       
   Scenario Outline: New scenario
     Given ingreso en el body parametro "<store>"
