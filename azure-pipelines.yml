@@ -20,6 +20,18 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean test'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+
 # - script: |
 #     mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
 #   displayName: 'Convert Test Results'
@@ -38,5 +50,5 @@ steps:
 - task: octane-end-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
-    CucumberReportPath: '$(System.DefaultWorkingDirectory)/results'
+#    CucumberReportPath: '$(System.DefaultWorkingDirectory)/results'
     WorkspaceList: '1002'
