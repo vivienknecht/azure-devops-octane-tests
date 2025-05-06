@@ -1,0 +1,40 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: Default
+
+steps:
+- task: octane-test-runner-start-task@1
+  inputs:
+    OctaneServiceConnection: 'connectionOctane'
+    WorkspaceList: '1002'
+    Framework: 'junit'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean test -Dtest=$(testsToRunConverted)'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+  continueOnError: true
+
+- task: octane-end-task@2
+  inputs:
+    OctaneServiceConnection: 'connectionOctane'
+    WorkspaceList: '1002'
