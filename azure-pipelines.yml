@@ -16,6 +16,12 @@ steps:
 #     WorkspaceList: '1002'
 #     Framework: junit
 
+- task: octane-start-task-private@1
+  inputs:
+    OctaneServiceConnection: 'connectionOctane1'
+    WorkspaceList: '1002'
+    CreatePipelineCheckbox: true
+
 - task: octane-start-task@2
   inputs:
     OctaneServiceConnection: 'connectionOctane'
