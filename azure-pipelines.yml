@@ -18,14 +18,8 @@ steps:
 
 - task: octane-start-task-private@1
   inputs:
-    OctaneServiceConnection: 'connectionOctane1'
-    WorkspaceList: '1002'
-    CreatePipelineCheckbox: true
-
-- task: octane-start-task@2
-  inputs:
-    OctaneServiceConnection: 'connectionOctane'
-    WorkspaceList: '1002'
+    OctaneServiceConnection: 'octaneConnectionPrivate'
+    WorkspaceList: '12019'
     CreatePipelineCheckbox: true
 
 - script: |
@@ -61,8 +55,8 @@ steps:
 #     artifact: 'bdd2octaneResults'
 #     path: '$(System.DefaultWorkingDirectory)/results'
 
-- task: octane-end-task@2
+- task: octane-end-task-private@1
+  condition: always()
   inputs:
-    OctaneServiceConnection: 'connectionOctane'
-#    CucumberReportPath: '$(System.DefaultWorkingDirectory)/results'
-    WorkspaceList: '1002'
+    OctaneServiceConnection: 'octaneConnectionPrivate'
+    WorkspaceList: '12019'
