@@ -17,6 +17,7 @@ steps:
 #     Framework: junit
 
 - task: octane-start-task-private@1
+  condition: always()
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
     WorkspaceList: '12019'
