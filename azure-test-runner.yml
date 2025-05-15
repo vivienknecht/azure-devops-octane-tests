@@ -10,10 +10,10 @@ trigger:
 pool: Default
 
 steps:
-- task: octane-test-runner-start-task@1
+- task: octane-test-runner-start-task-private@1
   inputs:
-    OctaneServiceConnection: 'connectionOctane'
-    WorkspaceList: '1002'
+    OctaneServiceConnection: 'octaneConnectionPrivate'
+    WorkspaceList: '12019'
     Framework: 'junit'
 
 - script: |
@@ -34,7 +34,7 @@ steps:
     sonarQubeRunAnalysis: false
   continueOnError: true
 
-- task: octane-end-task@2
+- task: octane-end-task-private@1
   inputs:
-    OctaneServiceConnection: 'connectionOctane'
-    WorkspaceList: '1002'
+    OctaneServiceConnection: 'octaneConnectionPrivate'
+    WorkspaceList: '12019'
