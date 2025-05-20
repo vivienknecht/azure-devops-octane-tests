@@ -6,7 +6,7 @@ trigger:
 parameters:
   - name: runExtraStep
     type: boolean
-    default: false
+    default: true
 
   - name: mavenGoals
     type: string
