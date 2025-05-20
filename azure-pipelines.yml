@@ -1,21 +1,20 @@
-# Starter pipeline
-
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# azure-pipelines.yml
 
 trigger:
 - master
 
+parameters:
+  - name: runExtraStep
+    type: boolean
+    default: false
+
+  - name: mavenGoals
+    type: string
+    default: 'clean test'
+
 pool: Default
 
 steps:
-# - task: octane-test-runner-start-task@1
-#   inputs:
-#     OctaneServiceConnection: 'connectionOctane'
-#     WorkspaceList: '1002'
-#     Framework: junit
-
 - task: octane-start-task-private@1
   condition: always()
   inputs:
@@ -24,14 +23,14 @@ steps:
     CreatePipelineCheckbox: true
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo "Hello, $(name)!"
+    echo "This is a regular script step."
+  displayName: 'Say Hello'
 
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean test'
+    goals: '${{ parameters.mavenGoals }}'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
@@ -41,20 +40,11 @@ steps:
     sonarQubeRunAnalysis: false
   continueOnError: true
 
-# - script: |
-#     mvn com.microfocus.adm.almoctane.bdd:bdd2octane:run -DreportFiles="**/results/tests/*.xml" -DfeatureFiles="**/results/features/*.feature" -Dframework="cucumber-jvm" -DresultFile="converted-test-results.xml"
-#   displayName: 'Convert Test Results'
-
-# - task: PublishPipelineArtifact@1
-#   inputs:
-#     targetPath: '$(System.DefaultWorkingDirectory)/converted-test-results.xml'
-#     artifact: 'bdd2octaneResults'
-#     publishLocation: 'pipeline'
-
-# - task: DownloadPipelineArtifact@2
-#   inputs:
-#     artifact: 'bdd2octaneResults'
-#     path: '$(System.DefaultWorkingDirectory)/results'
+# Optional step based on parameter
+- ${{ if eq(parameters.runExtraStep, true) }}:
+  - script: |
+      echo "This extra step runs only if runExtraStep is true."
+    displayName: 'Optional Extra Step'
 
 - task: octane-end-task-private@1
   condition: always()
