@@ -16,10 +16,6 @@ pool: Default
 
 steps:
 # Expose parameters as runtime variables
-- script: |
-    echo "##vso[task.setvariable variable=param_runExtraStep]${{ parameters.runExtraStep }}"
-    echo "##vso[task.setvariable variable=param_mavenGoals]${{ parameters.mavenGoals }}"
-  displayName: 'Set parameters as variables'
 
 - task: octane-start-task-private@1
   condition: always()
