@@ -10,7 +10,10 @@ parameters:
 
   - name: mavenGoals
     type: string
-    default: 'clean test'
+    default: clean test
+    values:
+      - clean test
+      - not clean test
 
 pool: Default
 
