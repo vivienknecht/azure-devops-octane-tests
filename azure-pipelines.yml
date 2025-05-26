@@ -4,10 +4,6 @@ trigger:
 - master
 
 parameters:
-  - name: runExtraStep
-    type: boolean
-    default: true
-
   - name: mavenGoals
     type: string
     default: clean test
@@ -30,7 +26,6 @@ steps:
 - script: |
     echo "Hello, $(name)!"
     echo "This is a regular script step."
-    echo "Parameter value for runExtraStep: $(param_runExtraStep)"
     echo "Parameter value for mavenGoals: $(param_mavenGoals)"
   displayName: 'Say Hello'
 
@@ -48,10 +43,6 @@ steps:
   continueOnError: true
 
 # Optional step based on parameter
-- ${{ if eq(parameters.runExtraStep, true) }}:
-  - script: |
-      echo "This extra step runs only if runExtraStep is true."
-    displayName: 'Optional Extra Step'
 
 - task: octane-end-task-private@1
   condition: always()
