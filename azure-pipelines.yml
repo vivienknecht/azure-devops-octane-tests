@@ -20,7 +20,7 @@ steps:
   condition: always()
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
-    RunPipelineWithParameters: false
+    RunPipelineWithParameters: true
     WorkspaceList: '3006'
     CreatePipelineCheckbox: true
 
