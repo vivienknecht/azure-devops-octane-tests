@@ -49,4 +49,5 @@ steps:
   condition: always()
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
+    RunPipelineWithParameters: false
     WorkspaceList: '3006'
