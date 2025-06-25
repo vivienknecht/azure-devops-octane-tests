@@ -10,6 +10,9 @@ parameters:
     values:
       - clean test
       - not clean test
+  - name: octane_auto_action_execution_id
+    type: string
+    default: 'value'
 
 pool: Default
 
