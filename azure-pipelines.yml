@@ -47,8 +47,7 @@ steps:
 
 # Optional step based on parameter
 
-- task: octane-start-task-private@1
+- task: octane-end-task-private@1
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
     WorkspaceList: '2001'
-    CreatePipelineCheckbox: true
