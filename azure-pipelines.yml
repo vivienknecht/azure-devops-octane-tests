@@ -19,14 +19,14 @@ steps:
 - task: octane-start-task-private@1
   condition: always()
   inputs:
-    OctaneServiceConnection: 'octaneConnectionPrivate'
-    WorkspaceList: '2001'
+    OctaneServiceConnection: 'performanceTestingMachineConnection'
+    WorkspaceList: '3001'
     CreatePipelineCheckbox: true
 
 - script: |
-    echo "Hello, $(name)!"
+    echo "Hello!"
     echo "This is a regular script step."
-    echo "Parameter value for mavenGoals: $(param_mavenGoals)"
+    echo "Parameter value for mavenGoals: ${{ parameters.mavenGoals }}"
   displayName: 'Say Hello'
 
 - task: Maven@4
@@ -47,5 +47,5 @@ steps:
 - task: octane-end-task-private@1
   condition: always()
   inputs:
-    OctaneServiceConnection: 'octaneConnectionPrivate'
-    WorkspaceList: '2001'
+    OctaneServiceConnection: 'performanceTestingMachineConnection'
+    WorkspaceList: '3001'
