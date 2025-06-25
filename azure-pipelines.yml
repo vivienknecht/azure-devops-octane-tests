@@ -22,8 +22,8 @@ steps:
 - task: octane-start-task-private@1
   condition: always()
   inputs:
-    OctaneServiceConnection: 'performanceTestingMachineConnection'
-    WorkspaceList: '3001'
+    OctaneServiceConnection: 'octaneConnectionPrivate'
+    WorkspaceList: '2001'
     CreatePipelineCheckbox: true
 
 - script: |
@@ -47,8 +47,8 @@ steps:
 
 # Optional step based on parameter
 
-- task: octane-end-task-private@1
-  condition: always()
+- task: octane-start-task-private@1
   inputs:
-    OctaneServiceConnection: 'performanceTestingMachineConnection'
-    WorkspaceList: '3001'
+    OctaneServiceConnection: 'octaneConnectionPrivate'
+    WorkspaceList: '2001'
+    CreatePipelineCheckbox: true
