@@ -23,7 +23,7 @@ steps:
   condition: always()
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
-    WorkspaceList: '2001'
+    WorkspaceList: '1002'
     CreatePipelineCheckbox: true
 
 - script: |
@@ -50,4 +50,4 @@ steps:
 - task: octane-end-task-private@1
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
-    WorkspaceList: '2001'
+    WorkspaceList: '1002'
