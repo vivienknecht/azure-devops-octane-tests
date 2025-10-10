@@ -19,7 +19,7 @@ pool: Default
 steps:
 # Expose parameters as runtime variables
 
-- task: octane-start-task-private@1
+- task: octane-start-task@1
   condition: always()
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
@@ -47,7 +47,7 @@ steps:
 
 # Optional step based on parameter
 
-- task: octane-end-task-private@1
+- task: octane-end-task@1
   inputs:
     OctaneServiceConnection: 'octaneConnectionPrivate'
     WorkspaceList: '1002'
