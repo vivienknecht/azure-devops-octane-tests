@@ -22,7 +22,7 @@ steps:
 - task: octane-test-runner-start-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '3002'
+    WorkspaceList: '3001'
     Framework: 'junit'
 
 - script: |
@@ -49,4 +49,4 @@ steps:
 - task: octane-end-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '3002'
+    WorkspaceList: '3001'
