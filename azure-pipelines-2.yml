@@ -27,4 +27,4 @@ steps:
 - task: octane-end-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '2001'
+    WorkspaceList: '1002'
