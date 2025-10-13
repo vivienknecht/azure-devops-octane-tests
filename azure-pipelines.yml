@@ -19,15 +19,10 @@ pool: Default
 steps:
 # Expose parameters as runtime variables
 
-- task: octane-start-task@25
-  inputs:
-    OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '3001'
-    CreatePipelineCheckbox: true
 - task: octane-test-runner-start-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '3001'
+    WorkspaceList: '3002'
     Framework: 'junit'
 
 - script: |
@@ -39,7 +34,7 @@ steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: '${ parameters.mavenGoals }'
+    goals: '${{ parameters.mavenGoals }}'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
@@ -54,4 +49,4 @@ steps:
 - task: octane-end-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '3001'
+    WorkspaceList: '3002'
