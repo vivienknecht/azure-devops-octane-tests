@@ -19,6 +19,12 @@ pool: Default
 steps:
 # Expose parameters as runtime variables
 
+- task: octane-start-task@25
+  inputs:
+    OctaneServiceConnection: 'testAzure'
+    WorkspaceList: '3002'
+    CreatePipelineCheckbox: true
+
 - task: octane-test-runner-start-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
