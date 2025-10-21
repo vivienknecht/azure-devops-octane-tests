@@ -25,6 +25,12 @@ steps:
     WorkspaceList: '4001'
     CreatePipelineCheckbox: true
 
+- task: octane-test-runner-start-task@25
+  inputs:
+    OctaneServiceConnection: 'testAzure'
+    WorkspaceList: '4001'
+    Framework: 'junit'
+
 - script: |
     echo "Hello!"
     echo "This is a regular script step."
