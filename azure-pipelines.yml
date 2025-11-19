@@ -22,14 +22,8 @@ steps:
 - task: octane-start-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '4001'
+    WorkspaceList: '7003'
     CreatePipelineCheckbox: true
-
-- task: octane-test-runner-start-task@25
-  inputs:
-    OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '4001'
-    Framework: 'junit'
 
 - script: |
     echo "Hello!"
@@ -55,4 +49,4 @@ steps:
 - task: octane-end-task@25
   inputs:
     OctaneServiceConnection: 'testAzure'
-    WorkspaceList: '4001'
+    WorkspaceList: '7003'
