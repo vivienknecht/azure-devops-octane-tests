@@ -13,6 +13,9 @@ parameters:
   - name: octane_auto_action_execution_id
     type: string
     default: 'value'
+  - name: unitTestResultsGlobPattern
+    type: string
+    default: '**/surefire-reports/TEST-*.xml'
 
 pool: Default
 
@@ -51,3 +54,5 @@ steps:
     OctaneServiceConnection: 'azurePConnection'
     WorkspaceList: '7003'
     Framework: 'junit'
+  env: 
+    UNIT_TEST_RESULTS_GLOB_PATTERN: ${{ parameters.unitTestResultsGlobPattern }}
