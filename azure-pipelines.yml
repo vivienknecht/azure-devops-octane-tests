@@ -19,9 +19,9 @@ pool: Default
 steps:
 # Expose parameters as runtime variables
 
-- task: octane-start-task@25
+- task: octane-start-task-private@1
   inputs:
-    OctaneServiceConnection: 'testAzure'
+    OctaneServiceConnection: 'azurePConnection'
     WorkspaceList: '7003'
     CreatePipelineCheckbox: true
 
@@ -46,7 +46,8 @@ steps:
 
 # Optional step based on parameter
 
-- task: octane-end-task@25
+- task: octane-end-task-private@1
   inputs:
-    OctaneServiceConnection: 'testAzure'
+    OctaneServiceConnection: 'azurePConnection'
     WorkspaceList: '7003'
+    Framework: 'junit'
